@@ -90,3 +90,6 @@ Exercise 5
 ● Write a function to split a string and convert it into an array of words
 ○ Example : “Hello World” → [“Hello”, “World”]
 */
+const _string: string = "Hello World";
+let _splitString: string[] = _string.split(" ");
+console.log(_splitString);
