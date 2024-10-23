@@ -12,10 +12,10 @@ following :
 ● Example input: 5
 */
 const _height: number = 0;
+let _counter: number = 0;
 if (_height <= 0) {
   console.log("invalid height");
 } else {
-  let _counter: number = 0;
   let _arrHeight: string[] = [];
 
   _counter = 0;
@@ -93,8 +93,8 @@ if (_total == 0) {
   console.log("invalid length");
 } else {
   let _arrNum: number[] = [];
-  let _counter: number = 0;
   let _temp: number[] = [];
+  _counter = 0;
   while (_counter < _total) {
     _temp.push(_counter + 1);
     _counter++;
