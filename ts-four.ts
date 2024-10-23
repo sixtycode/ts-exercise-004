@@ -11,6 +11,19 @@ following :
 ● Parameters : height → triangle height
 ● Example input: 5
 */
+const _height: number = 1;
+if (_height < 1) {
+  console.log("invalid height");
+} else {
+  let _counter: number = 0;
+  let _arrHeight: string[] = [];
+
+  _counter = 0;
+  while (_counter < _arrHeight.length) {
+    console.log(_arrHeight[_counter]);
+    _counter++;
+  }
+}
 
 /* 
 Exercise - Example Array Pseudocode
