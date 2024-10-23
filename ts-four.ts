@@ -11,8 +11,8 @@ following :
 ● Parameters : height → triangle height
 ● Example input: 5
 */
-const _height: number = 1;
-if (_height < 1) {
+const _height: number = 0;
+if (_height <= 0) {
   console.log("invalid height");
 } else {
   let _counter: number = 0;
@@ -83,6 +83,41 @@ Exercise 4
 numbers only
 ○ Example : [1,2,3,4,5,6,7,8,9,10] → [2,4,6,8,10]
 */
+const _total: number = 10;
+if (_total == 0) {
+  let _zeroTotal: number[] = [];
+  _zeroTotal.push(_total);
+  console.log(`Initial Array Value: [${_zeroTotal}]`);
+  console.log(`Even Numbers Only: [${_zeroTotal}]`);
+} else if (_total < 0) {
+  console.log("invalid length");
+} else {
+  let _arrNum: number[] = [];
+  let _counter: number = 0;
+  let _temp: number[] = [];
+  while (_counter < _total) {
+    _temp.push(_counter + 1);
+    _counter++;
+  }
+  console.log(`Initial Array Value: [${_temp}]`);
+
+  _counter = 0;
+  while (_counter < _temp.length) {
+    if (_temp[_counter] % 2 != 0) {
+      _temp[_counter] = 0;
+    }
+    _counter++;
+  }
+
+  _counter = 0;
+  while (_counter < _temp.length) {
+    if (_temp[_counter] != 0) {
+      _arrNum.push(_temp[_counter]);
+    }
+    _counter++;
+  }
+  console.log(`Even Numbers Only: [${_arrNum}]`);
+}
 
 /*
 Exercise 5
