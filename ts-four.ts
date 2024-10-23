@@ -38,6 +38,31 @@ using built in method in javascript.
 ● Example input: [10, 55, 79, 32]
 ● Example output: 79
 */
+let _arrayInput: number[] = [];
+_arrayInput.push(10, 55, 79, 32);
+
+function findMax(_array: number[]): number {
+  if (_array[0] !== undefined) {
+    let _maximumValue: number = _array[0];
+    _counter = 0;
+    while (_counter < _array.length) {
+      if (_array[_counter] > _maximumValue) {
+        _maximumValue = _array[_counter];
+      }
+      _counter++;
+    }
+    return _maximumValue;
+  } else {
+    return -1;
+  }
+}
+
+if (findMax(_arrayInput) == -1) {
+  console.log("invalid");
+} else {
+  console.log(`Initial Array Value: [${_arrayInput}]`);
+  console.log(`Maximum Value in Array: ${findMax(_arrayInput)}`);
+}
 
 /*
 Exercise 1
