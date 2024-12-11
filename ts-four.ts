@@ -117,19 +117,17 @@ function calcBodyMassIndex(_weightInput: number, _heightInput: number): string {
     let _bmiCalculate: number = Number(
       (_weightInput / _heightSquare).toFixed(2)
     );
-    console.log(_heightSquare);
-    console.log(_bmiCalculate);
+    let _bmiResult: string = "obesity";
     if (_bmiCalculate < 18.5) {
-      return "less weight";
+      _bmiResult = "less weight";
     } else if (_bmiCalculate >= 18.5 && _bmiCalculate < 25) {
-      return "ideal";
+      _bmiResult = "ideal";
     } else if (_bmiCalculate >= 25 && _bmiCalculate < 30) {
-      return "overweight";
+      _bmiResult = "overweight";
     } else if (_bmiCalculate >= 30 && _bmiCalculate < 40) {
-      return "very overweight";
-    } else {
-      return "obesity";
+      _bmiResult = "very overweight";
     }
+    return _bmiResult;
   }
 }
 
@@ -143,7 +141,7 @@ Exercise 4
 numbers only
 ○ Example : [1,2,3,4,5,6,7,8,9,10] → [2,4,6,8,10]
 */
-function removeOddNumbers(_arrayOdd: number[]) {
+function removeOddNumbers(_arrayOdd: number[]): number[] {
   let _temp: number[] = _arrayOdd;
   let _final: number[] = [];
   let _arrCounter: number = 0;
@@ -189,7 +187,7 @@ Exercise 5
 ● Write a function to split a string and convert it into an array of words
 ○ Example : “Hello World” → [“Hello”, “World”]
 */
-function splitString(_inputWord: string) {
+function splitString(_inputWord: string): string[] {
   let _splitString: string[] = _inputWord.split(" ");
   return _splitString;
 }
