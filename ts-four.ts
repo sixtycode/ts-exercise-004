@@ -11,19 +11,22 @@ following :
 ● Parameters : height → triangle height
 ● Example input: 5
 */
-const _height: number = 0;
-let _counter: number = 0;
-if (_height <= 0) {
-  console.log("invalid height");
-} else {
-  let _arrHeight: string[] = [];
+// function trianglePattern(_inputHeight: number) {
+//   const _height: number = 5;
+//   let _counter: number = 0;
+//   if (_height <= 0) {
+//     console.log("invalid height");
+//   } else {
+//     let _arrHeight: string[] = [];
 
-  _counter = 0;
-  while (_counter < _arrHeight.length) {
-    console.log(_arrHeight[_counter]);
-    _counter++;
-  }
-}
+//     _counter = 0;
+//     while (_counter < _arrHeight.length) {
+//       console.log(_arrHeight[_counter]);
+//       _counter++;
+//     }
+//   }
+//   return _
+// }
 
 /* 
 Exercise - Example Array Pseudocode
@@ -38,10 +41,8 @@ using built in method in javascript.
 ● Example input: [10, 55, 79, 32]
 ● Example output: 79
 */
-let _arrayInput: number[] = [];
-_arrayInput.push(10, 55, 79, 32);
-
 function findMax(_array: number[]): number {
+  let _counter: number = 0;
   if (_array[0] !== undefined) {
     let _maximumValue: number = _array[0];
     _counter = 0;
@@ -56,6 +57,9 @@ function findMax(_array: number[]): number {
     return -1;
   }
 }
+
+let _arrayInput: number[] = [];
+_arrayInput.push(10, 55, 79, 32);
 
 if (findMax(_arrayInput) == -1) {
   console.log("invalid");
@@ -101,6 +105,8 @@ Exercise 3
 ○ 30.0 - 39.9 return “very overweight”
 ○ > 39.9 return “obesity”
 */
+const _weightbmi: number = 105;
+const _heightbmi: number = 173;
 
 /*
 Exercise 4
@@ -108,6 +114,27 @@ Exercise 4
 numbers only
 ○ Example : [1,2,3,4,5,6,7,8,9,10] → [2,4,6,8,10]
 */
+function removeOddNumbers(_arrayOdd: number[]) {
+  let _temp: number[] = _arrayOdd;
+  let _final: number[] = [];
+  let _arrCounter: number = 0;
+  while (_arrCounter < _temp.length) {
+    if (_temp[_arrCounter] % 2 != 0) {
+      _temp[_arrCounter] = 0;
+    }
+    _arrCounter++;
+  }
+
+  _arrCounter = 0;
+  while (_arrCounter < _temp.length) {
+    if (_temp[_arrCounter] != 0) {
+      _final.push(_temp[_arrCounter]);
+    }
+    _arrCounter++;
+  }
+  return _final;
+}
+
 const _total: number = 10;
 if (_total == 0) {
   let _zeroTotal: number[] = [];
@@ -118,30 +145,13 @@ if (_total == 0) {
   console.log("invalid length");
 } else {
   let _arrNum: number[] = [];
-  let _temp: number[] = [];
-  _counter = 0;
-  while (_counter < _total) {
-    _temp.push(_counter + 1);
-    _counter++;
+  let _counterArray = 0;
+  while (_counterArray < _total) {
+    _arrNum.push(_counterArray + 1);
+    _counterArray++;
   }
-  console.log(`Initial Array Value: [${_temp}]`);
-
-  _counter = 0;
-  while (_counter < _temp.length) {
-    if (_temp[_counter] % 2 != 0) {
-      _temp[_counter] = 0;
-    }
-    _counter++;
-  }
-
-  _counter = 0;
-  while (_counter < _temp.length) {
-    if (_temp[_counter] != 0) {
-      _arrNum.push(_temp[_counter]);
-    }
-    _counter++;
-  }
-  console.log(`Even Numbers Only: [${_arrNum}]`);
+  console.log(`Initial Array Value: [${_arrNum}]`);
+  console.log(`Even Numbers Only: [${removeOddNumbers(_arrNum)}]`);
 }
 
 /*
@@ -150,6 +160,10 @@ Exercise 5
 ● Write a function to split a string and convert it into an array of words
 ○ Example : “Hello World” → [“Hello”, “World”]
 */
+function splitString(_inputWord: string) {
+  let _splitString: string[] = _inputWord.split(" ");
+  return _splitString;
+}
+
 const _string: string = "Hello World";
-let _splitString: string[] = _string.split(" ");
-console.log(_splitString);
+console.log(splitString(_string));
