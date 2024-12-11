@@ -105,8 +105,37 @@ Exercise 3
 ○ 30.0 - 39.9 return “very overweight”
 ○ > 39.9 return “obesity”
 */
-const _weightbmi: number = 105;
-const _heightbmi: number = 173;
+function calcBodyMassIndex(_weightInput: number, _heightInput: number): string {
+  if (_weightInput <= 0) {
+    return "invalid weight";
+  } else if (_heightInput <= 0) {
+    return "invalid height";
+  } else {
+    let _heightSquare: number = Number(
+      Math.pow(_heightInput * 0.01, 2).toFixed(2)
+    );
+    let _bmiCalculate: number = Number(
+      (_weightInput / _heightSquare).toFixed(2)
+    );
+    console.log(_heightSquare);
+    console.log(_bmiCalculate);
+    if (_bmiCalculate < 18.5) {
+      return "less weight";
+    } else if (_bmiCalculate >= 18.5 && _bmiCalculate < 25) {
+      return "ideal";
+    } else if (_bmiCalculate >= 25 && _bmiCalculate < 30) {
+      return "overweight";
+    } else if (_bmiCalculate >= 30 && _bmiCalculate < 40) {
+      return "very overweight";
+    } else {
+      return "obesity";
+    }
+  }
+}
+
+const _inputWeight: number = 118;
+const _inputHeight: number = 175;
+console.log(calcBodyMassIndex(_inputWeight, _inputHeight));
 
 /*
 Exercise 4
