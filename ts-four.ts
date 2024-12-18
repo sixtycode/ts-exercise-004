@@ -117,8 +117,28 @@ replace multiples of 3 with "Fizz", multiples of 5 with "Buzz", multiples of 3 a
 "FizzBuzz".
 ● Parameters : n → total looping
 ○ Example: n = 6 →1, 2, Fizz, 4, Buzz, Fizz
-○ Example: n = 15 → 1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 12, 13, 14, FizzBuzz
+○ Example: n = 15 → 1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz
 */
+function fizzBuzz(_numberLoop: number): string[] {
+  let _counterLoop: number = 1;
+  let _arrayFizzBuzz: string[] = [];
+  while (_counterLoop <= _loopingTotal) {
+    if (_counterLoop % 3 == 0 && _counterLoop % 5 == 0) {
+      _arrayFizzBuzz.push("FizzBuzz");
+    } else if (_counterLoop % 3 == 0) {
+      _arrayFizzBuzz.push("Fizz");
+    } else if (_counterLoop % 5 == 0) {
+      _arrayFizzBuzz.push("Buzz");
+    } else {
+      _arrayFizzBuzz.push(String(_counterLoop));
+    }
+    _counterLoop++;
+  }
+  return _arrayFizzBuzz;
+}
+
+const _loopingTotal: number = 15;
+console.log(fizzBuzz(_loopingTotal));
 
 /*
 Exercise 3
