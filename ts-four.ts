@@ -11,22 +11,26 @@ following :
 ● Parameters : height → triangle height
 ● Example input: 5
 */
-// function trianglePattern(_inputHeight: number) {
-//   const _height: number = 5;
-//   let _counter: number = 0;
-//   if (_height <= 0) {
-//     console.log("invalid height");
-//   } else {
-//     let _arrHeight: string[] = [];
+function trianglePattern(_iteration: number): string {
+  if (_iteration < 1) {
+    return "invalid input";
+  } else {
+    let _triangleCount: number[] = [];
+    let _counterTriangle: number = 1;
+    while (_counterTriangle <= _iteration) {
+      _triangleCount.push(_counterTriangle);
+      _counterTriangle++;
+    }
+    return _triangleCount.join(" ");
+  }
+}
 
-//     _counter = 0;
-//     while (_counter < _arrHeight.length) {
-//       console.log(_arrHeight[_counter]);
-//       _counter++;
-//     }
-//   }
-//   return _
-// }
+const _height: number = 5;
+let _heightCount: number = 1;
+while (_heightCount <= _height) {
+  console.log(trianglePattern(_heightCount));
+  _heightCount++;
+}
 
 /* 
 Exercise - Example Array Pseudocode
