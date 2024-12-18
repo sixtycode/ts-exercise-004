@@ -84,6 +84,30 @@ following :
 
 ● Parameters : height → triangle height
 */
+function trianglePatternDigit(_iterationDigit: number): string {
+  if (_iterationDigit < 1) {
+    return "invalid input";
+  } else {
+    let _triangleDigitCount: number[] = [];
+    let _counterDigitTriangle: number = 1;
+    while (_counterDigitTriangle <= _iterationDigit) {
+      if (_counterDigitTriangle <= 9) {
+        _triangleDigitCount.push(`0${_counterDigitTriangle}`);
+      } else {
+        _triangleDigitCount.push(_counterDigitTriangle);
+      }
+      _counterDigitTriangle++;
+    }
+    return _triangleDigitCount.join(" ");
+  }
+}
+
+const _heightDigit: number = 11;
+let _heightDigitCount: number = 1;
+while (_heightDigitCount <= _heightDigit) {
+  console.log(trianglePatternDigit(_heightDigitCount));
+  _heightDigitCount++;
+}
 
 /*
 Exercise 2
